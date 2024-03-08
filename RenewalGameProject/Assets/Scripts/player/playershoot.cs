@@ -1,8 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class playershoot : MonoBehaviour
 {
@@ -17,9 +13,12 @@ public class playershoot : MonoBehaviour
 
     [SerializeField]
     private float timebetween;
+
+    [SerializeField] 
+    private float destroyTime = 5;
+
     private float lasttimefire;
-    private bool firecontinuosly;
-    // Start is called before the first frame update
+
  
 
     // Update is called once per frame
@@ -40,11 +39,12 @@ public class playershoot : MonoBehaviour
     {
         GameObject bullet=Instantiate(bulletprehab,gunoffset.position,transform.rotation);
         Rigidbody2D rb=bullet.GetComponent<Rigidbody2D>();
+		
+		rb.velocity = bulletspeed*transform.up;
+		Destroy(bullet, destroyTime);
+	}
 
-        rb.velocity = bulletspeed*transform.up;
-    }
-
-    private void onfire()
+	private void onfire()
     {
        
     }
