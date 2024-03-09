@@ -25,7 +25,7 @@ public class playerawareness : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector2 enemytoplayer= player.position-transform.position+playerdist;
+        Vector2 enemytoplayer= player.position-transform.position;
         directionplayer = enemytoplayer.normalized;
 
         if (enemytoplayer.magnitude<=playerawaredist)

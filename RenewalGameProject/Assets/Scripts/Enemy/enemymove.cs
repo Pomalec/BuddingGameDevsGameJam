@@ -10,12 +10,12 @@ public class enemymove : MonoBehaviour
     [SerializeField]
     private float rotationspeed;
 
-    private Rigidbody2D rigidbody;
+    private Rigidbody2D _rigidbody;
     private playerawareness playerawarenesscont;
     private Vector2 targetdirection;
     private void Awake()
     {
-        rigidbody = GetComponent<Rigidbody2D>();
+        _rigidbody = GetComponent<Rigidbody2D>();
         playerawarenesscont=GetComponent<playerawareness>();
     }
 
@@ -45,17 +45,17 @@ public class enemymove : MonoBehaviour
         }
         Quaternion targetrot= Quaternion.LookRotation(transform.forward, targetdirection);
         Quaternion rot= Quaternion.RotateTowards(transform.rotation, targetrot, rotationspeed*Time.deltaTime);
-        rigidbody.SetRotation(rot);
+        _rigidbody.SetRotation(rot);
     }
     private void setvelocity()
     {
         if (targetdirection==Vector2.zero)
         {
-            rigidbody.velocity = Vector2.zero;
+            _rigidbody.velocity = Vector2.zero;
         }
         else
         {
-            rigidbody.velocity = transform.up * speed;
+            _rigidbody.velocity = transform.up * speed;
         }
     }
 }
