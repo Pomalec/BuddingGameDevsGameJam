@@ -39,6 +39,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: collectable
+    uniqueID: 3873310159
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

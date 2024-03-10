@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 3762748564671154653}
   - component: {fileID: 5329288945727124208}
   - component: {fileID: 7670012388705079663}
+  - component: {fileID: 6052720441608520184}
+  - component: {fileID: 6436938565704931675}
   m_Layer: 0
   m_Name: Enemy 1
   m_TagString: Enemy
@@ -104,6 +106,66 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dmg: 20
+--- !u!114 &6052720441608520184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5175391052644150874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8077937b86bc0cd4aaf5f5d984fe9dbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chanceofdrop: 36.47
+--- !u!114 &6436938565704931675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5175391052644150874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd8e46c67f968714983164a11a4def6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currenthealth: 100
+  maxhealth: 100
+  Ondamaged:
+    m_PersistentCalls:
+      m_Calls: []
+  onhealthchanged:
+    m_PersistentCalls:
+      m_Calls: []
+  died:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6052720441608520184}
+        m_TargetAssemblyTypeName: enemydrop, Assembly-CSharp
+        m_MethodName: randomdrop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6436938565704931675}
+        m_TargetAssemblyTypeName: health, Assembly-CSharp
+        m_MethodName: kys
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8680780204508280425
 GameObject:
   m_ObjectHideFlags: 0
