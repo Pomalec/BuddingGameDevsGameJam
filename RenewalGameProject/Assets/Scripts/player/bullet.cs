@@ -8,6 +8,7 @@ public class bullet : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField]
     private float dmg;
+   
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
@@ -18,5 +19,9 @@ public class bullet : MonoBehaviour
             Destroy(gameObject);
         }
        
+    }
+    public void upgradebullet()
+    {
+        dmg = 60;
     }
 }

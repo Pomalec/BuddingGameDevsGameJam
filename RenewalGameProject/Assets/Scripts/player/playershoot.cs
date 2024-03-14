@@ -5,8 +5,8 @@ public class playershoot : MonoBehaviour
     [SerializeField]
     private GameObject bulletprehab;
 
-    [SerializeField]
-    private float bulletspeed;
+    
+    private float bulletspeed=5;
 
     [SerializeField]
     private Transform gunoffset;
@@ -38,14 +38,16 @@ public class playershoot : MonoBehaviour
     private void firebullet()
     {
         GameObject bullet=Instantiate(bulletprehab,gunoffset.position,transform.rotation);
+        
         Rigidbody2D rb=bullet.GetComponent<Rigidbody2D>();
 		
 		rb.velocity = bulletspeed*transform.up;
 		Destroy(bullet, destroyTime);
 	}
 
-	private void onfire()
+	public void upgrade()
     {
-       
+        bulletspeed += 5;
+
     }
 }
